@@ -90,7 +90,10 @@ kable(taflaHl, "html") %>%
 #' Núlltilgátan okkar er sú að það sé enginn marktækur munur á hlutfalli sérbýla. Hæstu ásættanlegu villulíkur okkar eru 5%.
 
 #' # Þriðji Hluti
-#' **l)** 
+#' **l)** Hér teiknum við boxplot sem sýnir fermetraverð eftir tegund eigna.
+
+avgFermVerdIbud <- mean(filter(urtak1, teg_eign_groft == "Íbúð")$fermetraverd)
+avgFermVerdSerb <- mean(filter(urtak1, teg_eign_groft == "Sérbýli")$fermetraverd)
 
 ggplot(urtak1) + geom_boxplot(aes(teg_eign_groft, fermetraverd, fill = teg_eign_groft)) + xlab("Tegund eignar") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
 
