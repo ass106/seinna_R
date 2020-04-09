@@ -77,9 +77,9 @@ hlidaHlutfoll <- c((serH[1]/(serH[1]+serH[2])), (serH[2]/(serH[1]+serH[2])))
 laugarHlutfoll <- c((serL[1]/(serL[1]+serL[2])), (serL[2]/(serL[1]+serL[2])))
 seljaHlutfoll <- c((serS[1]/(serS[1]+serS[2])), (serS[2]/(serS[1]+serS[2])))
 
-taflaHl <- data.frame(Hlíðar = hlidarProsent,
-                      Laugarneshverfi_Vogar = laugarProsent,
-                      Seljahverfi = seljaProsent,
+taflaHl <- data.frame(Hlíðar = hlidaHlutfoll,
+                      Laugarneshverfi_Vogar = laugarHlutfoll,
+                      Seljahverfi = seljaHlutfoll,
                       row.names = c("Hlutfall Sérbýla", "Hlutfall Íbúða"))
 
 kable(taflaHl, "html") %>%
