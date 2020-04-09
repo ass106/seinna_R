@@ -111,3 +111,28 @@ seljaFS<-nrow(filter(urtak1,teg_eign_groft == 'Sérbýli', matssvaedi == 'Seljah
 
 #' Skilyrðin eru uppfyllt, úrtakið er handahófskennt og flokkabreytur
 #' skv. fyrirmælum. Væntigildi okkar er 0.45/3=0.15, 0.15*300 > 5
+
+#' # Þriðji Hluti
+#' **l)** Hér teiknum við boxplot sem sýnir fermetraverð eftir tegund eigna.
+
+avgFermVerdIbud <- mean(filter(urtak1, teg_eign_groft == "Íbúð")$fermetraverd)
+avgFermVerdSerb <- mean(filter(urtak1, teg_eign_groft == "Sérbýli")$fermetraverd)
+
+ggplot(urtak1) + geom_boxplot(aes(teg_eign_groft, fermetraverd, fill = teg_eign_groft)) + xlab("Tegund eignar") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
+
+#' **m)** 
+
+
+#' # Fjórði Hluti
+#' **o)** Hér er teiknuð mynd sem sýnir fermetraverð íbúða eftir hvefunum þremur
+
+ibudir <- filter(urtak1, teg_eign_groft == "Íbúð")
+ggplot(ibudir) + geom_boxplot(aes(matssvaedi, fermetraverd, fill = matssvaedi)) + xlab("Matssvæði") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
+
+#' **p)**
+
+
+#' # Fimmti Hluti
+#'  **q)** Hér er teiknuð mynd sem sýnir samband á milli stærðar og verðs íbúðaeginanna í hverfunum þremur
+
+ggplot(data = urtak1, aes(x=birtm2, y=kaupverd)) + geom_point() + xlab("Fermetrar") + ylab("Kaupverð") + scale_y_continuous(labels = comma)
