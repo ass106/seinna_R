@@ -89,5 +89,24 @@ kable(taflaHl, "html") %>%
 #' Við erum þeirrar trúar að stór munur sé til að mynda á hlutfalli sérbýla á milli þessara hverfa. Seljahverfi er með mjög hátt hlutfall sérbýla til að mynda.
 #' Núlltilgátan okkar er sú að það sé enginn marktækur munur á hlutfalli sérbýla. Hæstu ásættanlegu villulíkur okkar eru 5%.
 
-qchisq(0.95,300)
-chisq.test(table(0.04, 0.12, 0.29))
+#' # Þriðji Hluti
+#' **l)** 
+
+ggplot(urtak1) + geom_boxplot(aes(teg_eign_groft, fermetraverd, fill = teg_eign_groft)) + xlab("Tegund eignar") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
+
+#' **m)** 
+
+
+#' # Fjórði Hluti
+#' **o)** Hér er teiknuð mynd sem sýnir fermetraverð íbúða eftir hvefunum þremur
+
+ibudir <- filter(urtak1, teg_eign_groft == "Íbúð")
+ggplot(ibudir) + geom_boxplot(aes(matssvaedi, fermetraverd, fill = matssvaedi)) + xlab("Matssvæði") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
+
+#' **p)**
+
+
+#' # Fimmti Hluti
+#'  **q)** Hér er teiknuð mynd sem sýnir samband á milli stærðar og verðs íbúðaeginanna í hverfunum þremur
+
+ggplot(data = urtak1, aes(x=birtm2, y=kaupverd)) + geom_point() + xlab("Fermetrar") + ylab("Kaupverð") + scale_y_continuous(labels = comma)
