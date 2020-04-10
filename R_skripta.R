@@ -149,3 +149,25 @@ ggplot(ibudir) + geom_boxplot(aes(matssvaedi, fermetraverd, fill = matssvaedi)) 
 #'  **q)** Hér er teiknuð mynd sem sýnir samband á milli stærðar og verðs íbúðaeginanna í hverfunum þremur
 
 ggplot(data = urtak1, aes(x=birtm2, y=kaupverd)) + geom_point() + xlab("Fermetrar") + ylab("Kaupverð") + scale_y_continuous(labels = comma)
+
+#' **r)**
+#' Við búum til hlut fyrir aðhvarfsgreiningun sem inniheldur
+#' allt því sem hún skilar
+lml<-lm(rvk$kaupverd~rvk$birtm2)
+#' Svo fáum við allar upplýsingar úr skipuninni summary
+summary(lml)
+#' Matið á skurðpunktinum er 7680482
+#' Matið á hallatölunni er 192584
+#' SAMFELLT MÁL EH
+#' 
+#' EÐA ÞÁ
+
+#' **r)**
+#' Við búum til hlut fyrir aðhvarfsgreiningun sem inniheldur
+#' allt því sem hún skilar
+lml<-lm(rvk$birtm2~rvk$kaupverd)
+#' Svo fáum við allar upplýsingar úr skipuninni summary
+summary(lml)
+#' Matið á skurðpunktinum er -0.04453303478
+#' Matið á hallatölunni er 0.00000385879
+#' SAMFELLT MÁL EH
