@@ -89,6 +89,29 @@ kable(taflaHl, "html") %>%
 #' Við erum þeirrar trúar að stór munur sé til að mynda á hlutfalli sérbýla á milli þessara hverfa. Seljahverfi er með mjög hátt hlutfall sérbýla til að mynda.
 #' Núlltilgátan okkar er sú að það sé enginn marktækur munur á hlutfalli sérbýla. Hæstu ásættanlegu villulíkur okkar eru 5%.
 
+#' M_1 = Hlutfall sérbýla í Hlíðum
+#' M_2 = Hlutfall sérbýla í Laugarneshverfi/Vogum
+#' M_3 = Hlutfall sérbýla í Seljahverfi
+#' H_0 = M_1 - M_2 = 0, M_2 - M_3 = 0, M_1 - M_3 = 0
+#' Leggjum saman öll gildi í töflunni til að fá gildið á prófstærðinni 
+#' 0.04 + 0.12 + 0.29 = 0.45
+
+hlidarFS<-nrow(filter(urtak1,teg_eign_groft == 'Sérbýli', matssvaedi == 'Hlíðar'))
+vogarFS<-nrow(filter(urtak1,teg_eign_groft == 'Sérbýli', matssvaedi == 'Laugarneshverfi/Vogar'))
+seljaFS<-nrow(filter(urtak1,teg_eign_groft == 'Sérbýli', matssvaedi == 'Seljahverfi'))
+
+#' Skv skipun er p-gildi 0.00001908
+#' Það er greinilega marktækur munur
+
+#' **k)**
+#' Þær forsendur sem þurfa að vera uppfylltar eru:
+#' Að úrtakið sé handahófskennt
+#' Breyturnar séu flokkabreytur
+#' Að væntigildi úrtaksprófana á hverju stigi sé a.m.k. 5
+
+#' Skilyrðin eru uppfyllt, úrtakið er handahófskennt og flokkabreytur
+#' skv. fyrirmælum. Væntigildi okkar er 0.45/3=0.15, 0.15*300 > 5
+
 #' # Þriðji Hluti
 #' **l)** Hér teiknum við boxplot sem sýnir fermetraverð eftir tegund eigna.
 
