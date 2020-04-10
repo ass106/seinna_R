@@ -132,6 +132,9 @@ t.test(ibudfmv, serbfmv)
 #' Við höfnum því núlltilgátunni og fullyrðum að munur sé á 
 #' meðalfermetraverði á íbúðum og sérbýlum.
 
+#' **n)**
+#' Skv, t.test() hér að ofan þá reyndist
+#' 95% öryggisbil vera [33770.45, 67131.08]
 
 #' # Fjórði Hluti
 #' **o)** Hér er teiknuð mynd sem sýnir fermetraverð íbúða eftir hvefunum þremur
