@@ -98,6 +98,16 @@ avgFermVerdSerb <- mean(filter(urtak1, teg_eign_groft == "Sérbýli")$fermetrave
 ggplot(urtak1) + geom_boxplot(aes(teg_eign_groft, fermetraverd, fill = teg_eign_groft)) + xlab("Tegund eignar") + ylab("Fermetraverð") + scale_y_continuous(labels = comma)
 
 #' **m)** 
+#' Til þess að draga ályktanir af meðaltali tveggja þýða
+#' þótti okkur gáfulegast að nota t-próf.
+#' Set fermetraverð íbúða og sérbýla í sitthvora breytuna
+ibudfmv <- c(filter(urtak1, teg_eign_groft == "Íbúð")$fermetraverd)
+serbfmv <- c(filter(urtak1, teg_eign_groft == "Sérbýli")$fermetraverd)
+t.test(ibudfmv, serbfmv)
+#' Gildið á prófstærðinni er 6.0297
+#' p-gildi er 0.00000006476
+#' Við höfnum því núlltilgátunni og fullyrðum að munur sé á 
+#' meðalfermetraverði á íbúðum og sérbýlum.
 
 
 #' # Fjórði Hluti
