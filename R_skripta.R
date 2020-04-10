@@ -153,21 +153,21 @@ ggplot(data = urtak1, aes(x=birtm2, y=kaupverd)) + geom_point() + xlab("Fermetra
 #' **r)**
 #' Við búum til hlut fyrir aðhvarfsgreiningun sem inniheldur
 #' allt því sem hún skilar
-lml<-lm(rvk$kaupverd~rvk$birtm2)
+lml<-lm(urtak1$birtm2~urtak1$kaupverd)
 #' Svo fáum við allar upplýsingar úr skipuninni summary
 summary(lml)
-#' Matið á skurðpunktinum er 7680482
-#' Matið á hallatölunni er 192584
-#' SAMFELLT MÁL EH
-#' 
-#' EÐA ÞÁ
-
-#' **r)**
-#' Við búum til hlut fyrir aðhvarfsgreiningun sem inniheldur
-#' allt því sem hún skilar
-lml<-lm(rvk$birtm2~rvk$kaupverd)
-#' Svo fáum við allar upplýsingar úr skipuninni summary
-summary(lml)
-#' Matið á skurðpunktinum er -0.04453303478
-#' Matið á hallatölunni er 0.00000385879
-#' SAMFELLT MÁL EH
+#' Matið á skurðpunktinum er 0.5308068017
+#' Matið á hallatölunni er 0.0000039203
+#' Skv. þeim upplýsingum sem við höfum aflað
+#' þá er aðlagsgreiningarlíkan hentugt þegar
+#' að háða breytan er tvíþætt (binary) í eðli
+#' sínu. Hjá okkur er það kaupverð á íbúð sem
+#' er ekki tvíþætt breyta. Við teljum því að
+#' þetta líkan sé ekki endilega gáfulegast
+#' fyrir þetta tilfelli.
+#' Við erum líka að vinna með úrtak sem inniheldur
+#' þrjú hverfi á höfuðborgarsvæðinu. Fermetraverð
+#' getur verið mjög misjafnt bæði á milli hverfa
+#' og landshluta. Þannig er kannski ekki málið að
+#' meta stærð út frá kaupverði fyrst það er svona
+#' misjafnt.
